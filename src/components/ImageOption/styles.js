@@ -10,14 +10,20 @@ export const styles = StyleSheet.create({
     borderBottomWidth: 4,
     borderColor: 'lightgray',
     borderRadius: 20,
-    // size
     width: '48%',
     height:'48%',
     alignItems:'center',
-    //spacing
     padding:10
   },
   optionText: {
-    
+    fontWeight: 'bold',
+  },
+  selectedContainer: {
+    backgroundColor: '#ddf4fe',
+    borderColor:'#81d5fe'
+  },
+  selectedText: {
+    color: '#40bef7',
+    fontWeight: 'bold',
   }
 })
