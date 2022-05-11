@@ -8,12 +8,7 @@ export const globalStyles = StyleSheet.create({
     padding: 10,
     paddingTop:50
   },
-  text: {
-    fontSize: 20,
-    fontWeight: "bold",
-    fontFamily: "Helvetica",
-    alignSelf: 'stretch',
-  },
+
   optionsContainer: {
     width: '100%',
     flexDirection: 'row',
