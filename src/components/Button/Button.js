@@ -14,7 +14,7 @@ const Button = ({ text, onPress, disabled }) => {
   )
 };
 
-Button.PropTypes = {
+Button.propTypes = {
   text: PropTypes.string.isRequired,
   onPress: PropTypes.func,
   disabled: PropTypes.bool
