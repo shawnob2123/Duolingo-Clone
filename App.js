@@ -1,12 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, View, Image, Alert } from 'react-native';
+import { StyleSheet, View, Alert } from 'react-native';
 import { globalStyles } from './styles';
+import Header from './src/components/Header/Header';
 import ImageMCQuestion from './src/components/ImageMCQuestion/ImageMCQuestion';
 
 import OpenEndedQuestion from './src/components/OpenEndedQuestion/OpenEndedQuestion';
-// import questions from './data/openEndedQuestions'
-// import questions from './data/imageMultipleChoiceQuestions';
 import questions from './data/allQuestions';
 
 
@@ -34,6 +33,10 @@ export default function App() {
 
   return (
     <View style={globalStyles.root}>
+      <Header
+        progress={(currentQuestionIndex) / questions.length}
+
+      />
       {currentQuestion.type === 'IMAGE_MULTIPLE_CHOICE' && ( <ImageMCQuestion
         question={currentQuestion}
         onCorrect={onCorrect}
