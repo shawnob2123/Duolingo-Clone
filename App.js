@@ -15,6 +15,7 @@ export default function App() {
     questions[currentQuestionIndex]
   );
 
+  const [lives, setLives] = useState(5);
   useEffect(() => {
     if (currentQuestionIndex >= questions.length) {
       Alert.alert('You have finished the quiz');
@@ -28,13 +29,25 @@ export default function App() {
     setCurrentQuestionIndex(currentQuestionIndex + 1);
   };
   const onWrong = () => {
-    Alert.alert('Incorrecto', 'Inténtalo de nuevo');
+    Alert.alert('Wrong answer');
+    setLives(lives - 1);
+    if (lives <= 1) {
+      Alert.alert('You have run out of lives', 'Try Again', [{
+        text: 'OK',
+        onPress: () => { 
+          setLives(5);
+          setCurrentQuestionIndex(0);
+        }
+      }]);
+    }
   };
 
   return (
     <View style={globalStyles.root}>
       <Header
         progress={(currentQuestionIndex) / questions.length}
+        lives={lives}
+
 
       />
       {currentQuestion.type === 'IMAGE_MULTIPLE_CHOICE' && ( <ImageMCQuestion
