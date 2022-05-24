@@ -37,7 +37,6 @@ const OpenEndedQuestion = ({ question, onCorrect, onWrong }) => {
           <Text style={styles.sentence}>{question.text}</Text>
         </View>
       </View>
-
       <TextInput
         value={input}
         onChangeText={setInput}

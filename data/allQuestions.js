@@ -146,27 +146,35 @@ export default [
       },
     ],
   },
-  // {
-  //   id: "q7",
-  //   type: "FILL_IN_THE_BLANK",
-  //   parts: [
-  //     {
-  //       text: "la",
-  //       isBlank: true,
-  //     },
-  //     {
-  //       text: "nino",
-  //       isBlank: true,
-  //     },
-  //     {
-  //       text: "el",
-  //       isBlank: true,
-  //     },
-  //     {
-  //       text: "nina",
-  //       isBlank: true,
-  //     },
-  //   ],
-  //   options: ["la", "el", "nina", "nino", "ella"],
-  // },
+  {
+    id: "q8",
+    type: "TRANSLATE_SENTENCE",
+    text: "Tu comes culo",
+    answer: "Do you eat ass",
+    options: ["Do", "she", "he", "you", "eat", "ass"],
+  },
+  {
+    id: "q7",
+    type: "FILL_IN_THE_BLANK",
+    parts: [
+      {
+        text: "la",
+        isBlank: true,
+      },
+      {
+        text: "nino",
+        isBlank: true,
+      },
+      {
+        text: "el",
+        isBlank: true,
+      },
+      {
+        text: "nina",
+        isBlank: true,
+      },
+    ],
+    options: ["la", "el", "nina", "nino", "ella"],
+  },
+  
 ];
