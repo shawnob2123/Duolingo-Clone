@@ -8,6 +8,14 @@ import AntDesign from '@expo/vector-icons/AntDesign';
 const TranslateSentence = ({ question, onCorrect, onWrong }) => {
   const [input, setInput] = useState('');
 
+  const onChoicePress = () => { 
+    if (question.answer.toLowerCase() === input.toLowerCase()) {
+      onCorrect();
+    } else {
+      onWrong();
+    }
+  }
+
   return (
     <>
       <Text style={styles.title}>Translate this sentence</Text>
@@ -24,21 +32,20 @@ const TranslateSentence = ({ question, onCorrect, onWrong }) => {
       <TextInput
         value={input}
         style={styles.input}
+        onChangeText={setInput}
+
 
       />
       {/* Choices */}
-      <Text>Select your answers below</Text>
+      <Text style={styles.alert}>Select your answers below</Text>
       <View style={styles.choicesRow}>
         {question.options.map((choice, index) => (
           <Choices
             key={index}
             text={choice}
             onSelect={() => { 
-              if (choice === question.answer) {
-                onCorrect();
-              } else {
-                onWrong();
-              }
+              setInput(choice);
+
             }}
           />
         ))}

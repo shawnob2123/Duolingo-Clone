@@ -34,7 +34,8 @@ export const styles = StyleSheet.create({
   },
   input: {
     borderBottomWidth: 2,
-    flex:1 ,
+    height : '50%',
+    width: '100%',
     borderColor: '#ccc',
     borderTopWidth: 0,
     borderLeftWidth: 0,
@@ -46,5 +47,10 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-around',
     margin: 10,
+  },
+  alert: {
+    fontSize: 16,
+    color: 'gray',
+    paddingTop: 20
   }
 })

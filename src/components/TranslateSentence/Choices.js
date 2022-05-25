@@ -22,6 +22,7 @@ const styles = StyleSheet.create({
   choice: {
     borderRadius: 10,
     borderWidth: 1,
+    borderBottomWidth: 2,
     borderColor: 'lightgray',
     padding: 10,
   }
