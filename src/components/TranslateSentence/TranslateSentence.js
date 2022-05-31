@@ -1,5 +1,5 @@
-import { StyleSheet, Text, View, Pressable, Image, TextInput } from 'react-native'
-import React, { useState} from 'react';
+import { Text, View, Image, TextInput, Alert, Keyboard } from 'react-native'
+import React, { useState } from 'react';
 import Button from '../Button/Button';
 import { styles } from './styles';
 import Choices from './Choices';
@@ -8,13 +8,18 @@ import AntDesign from '@expo/vector-icons/AntDesign';
 const TranslateSentence = ({ question, onCorrect, onWrong }) => {
   const [input, setInput] = useState('');
 
-  const onChoicePress = () => { 
-    if (question.answer.toLowerCase() === input.toLowerCase()) {
+  const onChoicePress = () => {
+    
+  };
+
+  const onSubmit = () => {
+    if (question.answer.toLowerCase === input.toLowerCase) {
       onCorrect();
     } else {
       onWrong();
     }
   }
+
 
   return (
     <>
@@ -31,20 +36,24 @@ const TranslateSentence = ({ question, onCorrect, onWrong }) => {
       </View>
       <TextInput
         value={input}
-        style={styles.input}
         onChangeText={setInput}
-
-
+        style={styles.input}
+        placeholder='Type in English'
+        textAlignVertical='top'
+        multiline
+        onSubmitEditing={Keyboard.dismiss}
+        numberOfLines={4}
       />
+     
       {/* Choices */}
-      <Text style={styles.alert}>Select your answers below</Text>
+      <Text style={styles.alert}>View options</Text>
       <View style={styles.choicesRow}>
         {question.options.map((choice, index) => (
           <Choices
             key={index}
             text={choice}
             onSelect={() => { 
-              setInput(choice);
+              onChoicePress();
 
             }}
           />
@@ -52,8 +61,9 @@ const TranslateSentence = ({ question, onCorrect, onWrong }) => {
         </View>
       <Button
         text='Check'
-        onPress={null}
+        onPress={onSubmit}
         disabled={!input}
+        
       />
     </>
   )

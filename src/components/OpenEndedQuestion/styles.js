@@ -31,13 +31,12 @@ export const styles = StyleSheet.create({
     color: 'gray',
   },
   input: {
+    flex:1,
     borderWidth: 1,
     borderColor: 'lightgray',
     alignSelf: 'stretch',
     backgroundColor: '#ebebeb',
-    flex: 1,
-    borderRadius: 10,
+    borderRadius: 5,
     padding: 10,
-    fontSize: 16
   }
 })

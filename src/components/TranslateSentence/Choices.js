@@ -1,17 +1,11 @@
 import { StyleSheet, Text, View, Pressable } from 'react-native'
 import React from 'react'
 
-const Choices = ({ text, onSelect}) => {
+const Choices = ({ text, onPress, isSelected}) => {
   
-  const onPress = () => {
-    onPress(text);
-  }
   return (
-    <Pressable
-      onPress={onSelect}
-      style={styles.choice}
-    >
-      <Text>{text}</Text>
+    <Pressable onPress={onPress} style={[styles.choice, {backgroundColor: isSelected ? 'lightgray' : 'white'}]}>
+       <Text style={[styles.text, {color: isSelected ? 'lightgray' : 'black'}]}>{text}</Text>
     </Pressable>
   )
 }
@@ -22,8 +16,13 @@ const styles = StyleSheet.create({
   choice: {
     borderRadius: 10,
     borderWidth: 1,
-    borderBottomWidth: 2,
+    borderBottomWidth: 4,
     borderColor: 'lightgray',
     padding: 10,
+    paddingHorizontal: 15,
+    marginRight: 5,
+  },
+  text: {
+
   }
 })

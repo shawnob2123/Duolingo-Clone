@@ -5,7 +5,7 @@ export const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     marginBottom: 10,
-
+    alignSelf: 'flex-start',
   },
   row: {
     flexDirection: 'row',
@@ -15,7 +15,7 @@ export const styles = StyleSheet.create({
     marginBottom :0,
   },
   image: {
-      width: '30%',
+    width: '30%',
     aspectRatio: 3/4,
     resizeMode: 'contain',
     marginRight: 10,
@@ -33,13 +33,15 @@ export const styles = StyleSheet.create({
     paddingLeft: 10
   },
   input: {
-    borderBottomWidth: 2,
-    height : '50%',
-    width: '100%',
-    borderColor: '#ccc',
-    borderTopWidth: 0,
-    borderLeftWidth: 0,
-    borderRightWidth: 0,
+   flex:1,
+    borderWidth: 1,
+    borderColor: 'lightgray',
+    alignSelf: 'stretch',
+    backgroundColor: '#ebebeb',
+    borderRadius: 10,
+    padding: 10,
+
+
   },
   choicesRow: {
     flexDirection: 'row',

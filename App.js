@@ -86,6 +86,13 @@ export default function App() {
         progress={currentQuestionIndex / questions.length}
         lives={lives}
       />
+      {currentQuestion.type === 'FILL_IN_THE_BLANK' ? (
+        <FillBlanks
+          question={currentQuestion}
+          onCorrect={onCorrect}
+          onWrong={onWrong}
+        />
+      ) : null}
       {currentQuestion.type === 'IMAGE_MULTIPLE_CHOICE' && (
         <ImageMCQuestion
           question={currentQuestion}
@@ -107,13 +114,7 @@ export default function App() {
           onWrong={onWrong}
         />
       ) : null}
-      {/* {currentQuestion.type === 'FILL_IN_THE_BLANK' ? (
-        <FillBlanks
-          question={currentQuestion}
-          onCorrect={onCorrect}
-          onWrong={onWrong}
-        />
-      ) : null} */}
+      
     </View>
   ); 
 }
