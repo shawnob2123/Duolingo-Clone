@@ -2,6 +2,7 @@ export default [
   {
     id: 'q0',
     type: 'FILL_IN_THE_BLANK',
+    answer: ['el', 'la'],
     parts: [
       {
         text: 'el',

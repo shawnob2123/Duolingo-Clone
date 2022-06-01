@@ -20,7 +20,8 @@ export const styles = StyleSheet.create({
   blank: {
     borderBottomWidth: 2,
     borderBottomColor: '#ccc',
-    width: 75
+    width: 85,
+   
 
   },
   sentenceContainer: {
